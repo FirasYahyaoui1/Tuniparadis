@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "765851087887",
+    "firebase_url": "https://tuniparadis.firebaseio.com",
+    "project_id": "tuniparadis",
+    "storage_bucket": "tuniparadis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765851087887:android:05460b895f3d13da9a9f7a",
+        "android_client_info": {
+          "package_name": "com.example.tuniparadis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765851087887-4qo464tl82vvuil5jl9a9e2k26pgv3uk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tuniparadis",
+            "certificate_hash": "e2a0b7ad6ce7f189ef83beb3dc7ac1d27740ded0"
+          }
+        },
+        {
+          "client_id": "765851087887-rjbh60pcgkfj11n8fcq7t2cu6460kfi4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFaFTpL9nojlJQSL8D8M9Wb2LFgy7X7AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765851087887-rjbh60pcgkfj11n8fcq7t2cu6460kfi4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
