@@ -21,5 +21,39 @@
     <string name="prix">prix</string>
     <string name="InvalidPass">mot de passe non conforme</string>
     <string name="verif">Vérifier vos champs</string>
+    <string name="n_hotel">La Cigale Tabarka Hotel Thalasso Spa  Golf</string>
+    <string name="Tabarka">Tabarka</string>
+    <string name="no_hotel">Hotel Le Royal Hammamet</string>
+    <string name="Hammamet">Hammamet</string>
+    <string name="nom_hotel">Hasdrubal Thalassa  Spa Djerba</string>
+    <string name="Djerba">Djerba</string>
+    <string name="nom_hote">Movenpick Hotel Du Lac Tunis</string>
+    <string name="Tunis">Tunis</string>
+    <string name="nomhotel">El Mouradi Gammarth</string>
+    <string name="Gammarth">Gammarth</string>
+    <string name="nomhotels">Four Seasons Hotel Tunis</string>
+    <string-array name="Adultes">
+        <item>Adultes</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="Chambres">
+        <item>Chambres</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="Enfants">
+        <item>Enfants</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 
 </resources>

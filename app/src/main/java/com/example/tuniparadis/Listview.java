@@ -1,26 +1,15 @@
 package com.example.tuniparadis;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class Listview extends AppCompatActivity {
     private static final int CODE_DE_MON_ACTIVITE = 1;
     private final String EXTRA_TITLE = "title";
     private final String EXTRA_PRIX = "lieu";
@@ -32,11 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //bAR MENU
-
-
-
+        setContentView(R.layout.activity_listview);
         // ListView
         // Récupération de la "ListView" créée dans le fichier activity_main.xml
         maListViewPerso = findViewById(R.id.listviewperso);
@@ -64,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.Gammarth),
                 getString(R.string.Tunis)};
         //prix des item
-        String[] prix = new String[]{"150", "150", "150", "150", "150", "150"};
+        String [] prix=new String[]{"150","150","150","150","150","150"};
 
         // Icones (images) des items
         String[] icon = new String[]{
-                String.valueOf(R.drawable.word),
-                String.valueOf(R.drawable.word),
-                String.valueOf(R.drawable.movenpic),
+                String.valueOf(R.drawable.four),
+                String.valueOf(R.drawable.four),
+                String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four)};
@@ -92,47 +77,12 @@ public class MainActivity extends AppCompatActivity {
         SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(),
                 listItems,
                 R.layout.activity_listview,
-                new String[]{"title", "lieu", "prix", "icon"},
-                new int[]{R.id.title, R.id.blasa, R.id.flous, R.id.icon});
+                new String[]{"title", "lieu","prix", "icon"},
+                new int[]{R.id.title, R.id.blasa,R.id.flous, R.id.icon});
         // Association de l’adapter à la liste
         maListViewPerso.setAdapter(adapter);
-        // Interaction avec les items de la liste
-        maListViewPerso.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @SuppressWarnings("unchecked")
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                HashMap<String, String> item = (HashMap) maListViewPerso.getItemAtPosition(position);
-
-                // On crée un objet Bundle, c'est ce qui va nous permettre d'envoyer des données
-                // à l'autre activité
-                Bundle oBundle = new Bundle();
-
-                // Cela fonctionne plus ou moins comme une HashMap,
-                // on entre une clef et sa valeur en face
-                oBundle.putString(EXTRA_TITLE, item.get("title"));
-                oBundle.putString(EXTRA_LIEU, item.get("lieu"));
-                oBundle.putString(EXTRA_PRIX, item.get("prix"));
-
-                // On crée l'Intent qui va nous permettre d'afficher l'autre activité
-                Intent intent = new Intent(MainActivity.this, Reserver.class);
-
-                // On affecte à l'Intent le Bundle que l'on a créé
-                intent.putExtras(oBundle);
-                // On démarre l'autre activité
-                startActivityForResult(intent, CODE_DE_MON_ACTIVITE);
-            }
-        });
 
 
 
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
     }
 }
-
