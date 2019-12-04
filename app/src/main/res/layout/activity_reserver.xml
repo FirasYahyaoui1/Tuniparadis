@@ -24,15 +24,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Date_départ" />
 
-    <EditText
+    <TextView
         android:id="@+id/Date_départ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Date Départ"
-        android:inputType="datetime"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/date_arrivé"/>
 
 
     <TextView
@@ -48,14 +47,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/date_arrivé"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Date arrivéé"
         android:textAlignment="center"
-        android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nom_hotell" />

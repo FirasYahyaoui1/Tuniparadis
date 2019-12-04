@@ -12,6 +12,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.Normalizer;
 
@@ -26,14 +28,18 @@ public class Formulaire extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
+
         mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.btn_enregistrer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (verif()==false){
+               /* if (verif()==false){
                     Toast.makeText(Formulaire.this, R.string.verif, Toast.LENGTH_LONG).show();
                 }
-                else
+                else*/
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("User");
+                myRef.setValue("nom,prenom,email,ville,numero,password");
                 creeCompte();
 
 
@@ -58,7 +64,7 @@ public class Formulaire extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
 
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(Formulaire.this, LaunchlList.class);
+                            Intent intent = new Intent(Formulaire.this, MainActivity.class);
                             startActivity(intent);
 
                         } else {
@@ -87,6 +93,7 @@ public class Formulaire extends AppCompatActivity {
         String ville = country.getText().toString();
         String numero = number.getText().toString();
         String password = pwd.getText().toString();
+
         String Cpassword = Cpwd.getText().toString();
 
         if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || ville.isEmpty() || numero.isEmpty() || password.isEmpty() || Cpassword.isEmpty() || password != Cpassword) {

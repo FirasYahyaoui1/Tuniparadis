@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         String[] icon = new String[]{
                 String.valueOf(R.drawable.word),
                 String.valueOf(R.drawable.word),
-                String.valueOf(R.drawable.movenpic),
+                String.valueOf(R.drawable.movenpick),
                 String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four)};
