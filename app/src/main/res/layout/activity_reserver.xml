@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Reserver">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <Spinner
         android:id="@+id/enfant"
@@ -39,13 +42,13 @@
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:textAlignment="center"
-        android:textStyle="italic"
         android:textSize="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/date_arrivé"

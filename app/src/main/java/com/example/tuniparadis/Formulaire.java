@@ -23,11 +23,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Formulaire extends AppCompatActivity {
     private FirebaseAuth mAuth;
-
+    FirebaseDatabase database ;
+User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
+
+        database= FirebaseDatabase.getInstance();
+
+
 
         mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.btn_enregistrer).setOnClickListener(new View.OnClickListener() {
@@ -37,10 +42,24 @@ public class Formulaire extends AppCompatActivity {
                     Toast.makeText(Formulaire.this, R.string.verif, Toast.LENGTH_LONG).show();
                 }
                 else*/
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
+              creeCompte();
+                EditText fName = findViewById(R.id.user);
+                String nom = fName.getText().toString();
+                EditText lName = findViewById(R.id.Prénom);
+                EditText Email = findViewById(R.id.user_emailform);
+                EditText country = findViewById(R.id.ville);
+                EditText number = findViewById(R.id.telephone);
+                EditText pwd = findViewById(R.id.user_passwordform);
+                EditText Cpwd = findViewById(R.id.confirm_pass);
+                String prenom = lName.getText().toString();
+                String email = Email.getText().toString();
+                String ville = country.getText().toString();
+                String numero = number.getText().toString();
+                String password = pwd.getText().toString();
                 DatabaseReference myRef = database.getReference("User");
-                myRef.setValue("nom,prenom,email,ville,numero,password");
-                creeCompte();
+                user=new User(nom,prenom,email,ville,numero,password);
+                myRef.setValue(user);
+
 
 
             }
@@ -80,14 +99,12 @@ public class Formulaire extends AppCompatActivity {
     }
 
     public boolean verif() {
-        EditText fName = findViewById(R.id.user);
         EditText lName = findViewById(R.id.Prénom);
         EditText Email = findViewById(R.id.user_emailform);
         EditText country = findViewById(R.id.ville);
         EditText number = findViewById(R.id.telephone);
         EditText pwd = findViewById(R.id.user_passwordform);
         EditText Cpwd = findViewById(R.id.confirm_pass);
-        String nom = fName.getText().toString();
         String prenom = lName.getText().toString();
         String email = Email.getText().toString();
         String ville = country.getText().toString();
@@ -96,7 +113,7 @@ public class Formulaire extends AppCompatActivity {
 
         String Cpassword = Cpwd.getText().toString();
 
-        if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || ville.isEmpty() || numero.isEmpty() || password.isEmpty() || Cpassword.isEmpty() || password != Cpassword) {
+        if (/*nom.isEmpty() ||*/ prenom.isEmpty() || email.isEmpty() || ville.isEmpty() || numero.isEmpty() || password.isEmpty() || Cpassword.isEmpty() || password != Cpassword) {
             return false;
         } else
 

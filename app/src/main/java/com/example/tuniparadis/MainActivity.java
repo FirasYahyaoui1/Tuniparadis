@@ -1,5 +1,6 @@
 package com.example.tuniparadis;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,11 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -35,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //bAR MENU
 
-
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // ListView
         // Récupération de la "ListView" créée dans le fichier activity_main.xml
@@ -68,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Icones (images) des items
         String[] icon = new String[]{
-                String.valueOf(R.drawable.word),
+                String.valueOf(R.drawable.gamarth),
                 String.valueOf(R.drawable.word),
                 String.valueOf(R.drawable.movenpick),
-                String.valueOf(R.drawable.four),
+                String.valueOf(R.drawable.gamarth),
                 String.valueOf(R.drawable.four),
                 String.valueOf(R.drawable.four)};
         // Creation des items de la liste
@@ -124,15 +128,35 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.Français:
+                Toast.makeText(MainActivity.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                return  true;
+            case R.id.Anglais:
+                Toast.makeText(MainActivity.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                return  true;
+            case R.id.se_décoonecter:
+                finish();
+                Intent intent=new  Intent(MainActivity.this,Login.class);
+                startActivity(intent);
+                return true;
+
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
 

@@ -26,29 +26,38 @@ public class Login extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign__in);
+        //Chemin vers sign up activity
         findViewById(R.id.create_account).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Login.this,Formulaire.class);
+                Intent intent = new Intent(Login.this, Formulaire.class);
                 startActivity(intent);
 
             }
         });
-        mAuth = FirebaseAuth.getInstance();
-        findViewById(R.id.connect).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                connect();
+        //se connecter avec un compte firebase
+        try {
+            mAuth = FirebaseAuth.getInstance();
 
-            }
-        });
+            findViewById(R.id.connect).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    connect();
+
+                }
+            });
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Empty fields", Toast.LENGTH_LONG).show();
+        }
 
     }
+
     public void connect() {
         EditText mail = findViewById(R.id.user_email);
-        String email=mail.getText().toString();
+        String email = mail.getText().toString();
         EditText pwd = findViewById(R.id.user_password);
-        String password=pwd.getText().toString();
+        String password = pwd.getText().toString();
 
 
         mAuth.signInWithEmailAndPassword(email, password)
@@ -58,7 +67,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent=new Intent(Login.this,MainActivity.class);
+                            Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);
 
                         } else {
@@ -67,40 +76,17 @@ public class Login extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
 
-                        // ...
                     }
                 });
 
     }
- /*  public void creeCompte(){
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent=new Intent(Login.this,LaunchlList.class);
-                            startActivity(intent);
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-                        }
-
-                        // ...
-                    }
-                });
-
-    }*/
- @Override
- public void onStart() {
-     super.onStart();
-     // Check if user is signed in (non-null) and update UI accordingly.
-     FirebaseUser currentUser = mAuth.getCurrentUser();
-
- }
+    }
 }
