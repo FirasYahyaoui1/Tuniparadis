@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tuniparadis</string>
+    <string name="password">password</string>
+    <string name="h_password">write your password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="Email">Email</string>
+    <string name="h_Email">write your e-mail</string>
+    <string name="Date_de_Naissance">Date de naissance</string>
+    <string name="btn_cree">sign_up</string>
+    <string name="sexeH">MAN</string>
+    <string name="sexeF">Women</string>
+    <string name="connect">Connect</string>
+    <string name="du">From</string>
+    <string name="au">to</string>
+    <string name="debut_date">Date coming</string>
+    <string name="debut_fin">Date leaving</string>
+    <string name="create_account">Sign Up</string>
+    <string name="Chambre">Rooms</string>
+    <string name="Adulte">Adults</string>
+    <string name="enfant">Childrenn</string>
+    <string name="prix">price</string>
+    <string name="InvalidPass">password not conform</string>
+    <string name="verif">Vérificate your fields</string>
+    <string name="n_hotel">La Cigale Tabarka Hotel Thalasso Spa  Golf</string>
+    <string name="Tabarka">Tabarka</string>
+    <string name="no_hotel">Hotel Le Royal Hammamet</string>
+    <string name="Hammamet">Hammamet</string>
+    <string name="nom_hotel">Hasdrubal Thalassa  Spa Djerba</string>
+    <string name="Djerba">Djerba</string>
+    <string name="nom_hote">Movenpick Hotel Du Lac Tunis</string>
+    <string name="Tunis">Tunis</string>
+    <string name="nomhotel">El Mouradi Gammarth</string>
+    <string name="Gammarth">Gammarth</string>
+    <string name="nomhotels">Four Seasons Hotel Tunis</string>
+    <string name="failed">Authentication failed</string>
+    <string name="nom">First name</string>
+    <string name="numero">phone number</string>
+    <string name="ville">country</string>
+    <string name="prenom">last name</string>
+    <string-array name="Adultes">
+        <item>Adults</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="Chambres">
+        <item>Rooms</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="Enfants">
+        <item>Children</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

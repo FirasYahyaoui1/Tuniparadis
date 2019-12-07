@@ -2,6 +2,7 @@ package com.example.tuniparadis;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -24,8 +25,10 @@ public class Confirmation extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirmation);
+       // getUser email
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+       //creation de msg avec parametre de firebase
         String message="On vous contacte cher client sur votre email=";
         String email=currentUser.getEmail();
         msg=findViewById(R.id.Confirmation);
@@ -50,13 +53,13 @@ public class Confirmation extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.Français:
-                Toast.makeText(Confirmation.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.Anglais:
-                Toast.makeText(Confirmation.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.se_décoonecter:
-                finish();
+                onDestroy();
                 Intent intent=new  Intent(Confirmation.this,Login.class);
                 startActivity(intent);
                 return true;

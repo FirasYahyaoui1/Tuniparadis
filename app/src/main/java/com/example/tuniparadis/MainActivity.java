@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.Tunis)};
         //prix des item
         String[] prix = new String[]{"150", "150", "150", "150", "150", "150"};
-
+        
         // Icones (images) des items
         String[] icon = new String[]{
-                String.valueOf(R.drawable.gamarth),
-                String.valueOf(R.drawable.word),
+                String.valueOf(R.drawable.laico),
+                String.valueOf(R.drawable.hamm),
                 String.valueOf(R.drawable.movenpick),
                 String.valueOf(R.drawable.gamarth),
-                String.valueOf(R.drawable.four),
-                String.valueOf(R.drawable.four)};
+                String.valueOf(R.drawable.movenpic),
+                String.valueOf(R.drawable.laico)};
         // Creation des items de la liste
         for (int i = 0; i < title.length; i++) {
             item = new HashMap<>();
@@ -141,13 +141,13 @@ return true;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.Français:
-                Toast.makeText(MainActivity.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.Anglais:
-                Toast.makeText(MainActivity.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.se_décoonecter:
-                finish();
+                onDestroy();
                 Intent intent=new  Intent(MainActivity.this,Login.class);
                 startActivity(intent);
                 return true;

@@ -12,8 +12,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/normal_padding"
         android:layout_weight="0.5"
-        android:contentDescription=""
-        android:src="@drawable/user" />
+        android:src="@drawable/logoo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,16 +22,16 @@
 
         <EditText
             android:id="@+id/user"
-            android:text="@string/au"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom" />
+            android:inputType="text"
+            android:hint="@string/nom" />
 
         <EditText
             android:id="@+id/Prénom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Prénom" />
+            android:hint="@string/prenom" />
 
         <EditText
             android:id="@+id/user_emailform"
@@ -40,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:autofillHints="email"
-            android:hint="Email"
+            android:hint="@string/h_Email"
             android:inputType="textEmailAddress"
             tools:ignore="UnusedAttribute" />
 
@@ -48,13 +47,13 @@
             android:id="@+id/ville"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ville" />
+            android:hint="ville" />
 
         <EditText
             android:id="@+id/telephone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Numero de télèphone" />
+            android:hint="@string/numero" />
 
         <EditText
             android:id="@+id/user_passwordform"

@@ -29,7 +29,7 @@ User user;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form);
-
+//Cretion d'une table User dans firebase() avec les champs sign_up
         database= FirebaseDatabase.getInstance();
 
 
@@ -66,7 +66,7 @@ User user;
         });
 
     }
-
+//Fonction qui permet de cree un compte sur firebase avec un email et password
     public void creeCompte() {
 
         EditText mail = findViewById(R.id.user_emailform);
@@ -88,16 +88,15 @@ User user;
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(Formulaire.this, "Authentication failed.",
+                            Toast.makeText(Formulaire.this, R.string.failed,
                                     Toast.LENGTH_SHORT).show();
 
                         }
 
-                        // ...
                     }
                 });
     }
-
+// la fonction qui va verifier les champs vide
     public boolean verif() {
         EditText lName = findViewById(R.id.Prénom);
         EditText Email = findViewById(R.id.user_emailform);

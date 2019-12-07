@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Tuniparadis</string>
+    <string name="failed">Creation echoués</string>
     <string name="password">Mot de passe</string>
     <string name="h_password">Tapez votre mot de passe</string>
     <string name="confirm_password">confirmez mot de passe</string>
     <string name="Email">Email</string>
+    <string name="nom">nom</string>
+    <string name="prenom">prenom</string>
     <string name="h_Email">Tapez votre e-mail</string>
     <string name="Date_de_Naissance">Date de naissance</string>
     <string name="btn_cree">créer le compte</string>
@@ -11,6 +14,8 @@
     <string name="sexeF">Femme</string>
     <string name="connect">Se connecter</string>
     <string name="du">Du</string>
+    <string name="numero">numero</string>
+    <string name="ville">ville</string>
     <string name="au">Au</string>
     <string name="debut_date">Date de début</string>
     <string name="debut_fin">Date fin</string>

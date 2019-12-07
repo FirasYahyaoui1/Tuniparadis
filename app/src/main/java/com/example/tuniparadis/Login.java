@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                 }
             });
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Empty fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.failed, Toast.LENGTH_LONG).show();
         }
 
     }

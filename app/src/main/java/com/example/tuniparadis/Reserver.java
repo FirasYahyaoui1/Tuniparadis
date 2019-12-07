@@ -168,7 +168,7 @@ public class Reserver extends AppCompatActivity {
                         });
 
                 builder1.setNegativeButton(
-                        "No",
+                        "Cancel",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
@@ -211,10 +211,10 @@ public class Reserver extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.Français:
-                Toast.makeText(Reserver.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.Anglais:
-                Toast.makeText(Reserver.this,"la version en francais est bientot disponible",Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
                 return  true;
             case R.id.se_décoonecter:
                 finish();
